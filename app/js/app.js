@@ -8,11 +8,12 @@ var phonecatApp = angular.module('phonecatApp', [
 
   'phonecatControllers',
   'phonecatFilters',
-  'phonecatServices'
+  'phonecatServices',
+  'uiGmapgoogle-maps'
 ]);
 
-phonecatApp.config(['$routeProvider',
-  function($routeProvider) {
+phonecatApp.config(['$routeProvider', 'uiGmapGoogleMapApiProvider',
+  function($routeProvider, uiGmapGoogleMapApiProvider) {
     $routeProvider.
       when('/phones', {
         templateUrl: 'partials/phone-list.html',
@@ -25,4 +26,11 @@ phonecatApp.config(['$routeProvider',
       otherwise({
         redirectTo: '/phones'
       });
+
+      //configure the google map api
+      uiGmapGoogleMapApiProvider.configure({
+        //    key: 'your api key',
+        v: '3.20', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
   }]);

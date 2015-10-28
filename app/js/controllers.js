@@ -19,4 +19,6 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
     $scope.setImage = function(imageUrl) {
       $scope.mainImageUrl = imageUrl;
     };
+    //Add google map to the scope
+    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
   }]);

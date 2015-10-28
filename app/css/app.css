@@ -97,3 +97,5 @@ ul.specs dt {
 h1 {
   border-bottom: 1px solid gray;
 }
+
+.angular-google-map-container { height: 400px; }
