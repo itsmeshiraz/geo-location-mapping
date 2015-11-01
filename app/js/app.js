@@ -5,16 +5,23 @@
 var phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
   'phonecatAnimations',
-
   'phonecatControllers',
   'phonecatFilters',
   'phonecatServices',
-  'uiGmapgoogle-maps'
+  'uiGmapgoogle-maps',
+  'elasticsearch',
+  'angular-geohash'
 ]);
+
+
 
 phonecatApp.config(['$routeProvider', 'uiGmapGoogleMapApiProvider',
   function($routeProvider, uiGmapGoogleMapApiProvider) {
     $routeProvider.
+      when('/dashboard', {
+        templateUrl: 'partials/dashboard.html',
+        controller: 'dashboardCtrl'
+      }).
       when('/phones', {
         templateUrl: 'partials/phone-list.html',
         controller: 'PhoneListCtrl'

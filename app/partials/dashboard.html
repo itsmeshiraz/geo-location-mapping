@@ -1,0 +1,43 @@
+<div>
+  <ul>
+    <li>zoom: {{zoom}} of 20</li>
+    <li>elasticsearchPrecision: {{elasticsearchPrecision}} of 12</li>
+
+  </ul>
+</div>
+<div class="specs">
+
+
+
+  <!-- <ui-gmap-google-map center='map.center' zoom='map.zoom' events='map.events'></ui-gmap-google-map> -->
+<div >
+  <ui-gmap-google-map center="map.center" zoom="map.zoom" events="map.events" control="map.control"
+                       bounds="map.bounds" pan dragging="map.dragging" class="angular-google-map-container">
+                         <!-- <ui-gmap-rectangle ng-repeat="bucket in queryResult.aggregations.testgeoHashing.buckets"
+                                            bounds="{sw: {latitude: bucket.cell.bounds.bottom_right.lat,
+                                                          longitude: bucket.cell.bounds.top_left.lon},
+                                                     ne: {latitude: bucket.cell.bounds.top_left.lat,
+                                                          longitude: bucket.cell.bounds.bottom_right.lon}}"
+                                           fillColor="#b0cbcd"
+                                            fillOpacity="0.35">
+                        </ui-gmap-rectangle> -->
+  </ui-gmap-google-map>
+</div>
+
+</div>
+<div>
+<span>References</span>
+<dd>http://angular-ui.github.io/angular-google-maps/#!/api/google-map</dd>
+<dd>https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html</dd>
+
+</div>
+<div style="visibility: hidden;">
+  <span>ElasticSearch Connection </span>
+  <ul>
+    <li>{{esStatus}}</li>
+    <li>bottom_right: {{bottom_right}}</li>
+    <li>top_left: {{top_left}}</li>
+    <li>zoom: {{zoom}}</li>
+    <li>query result: {{queryResult}}</li>
+  </ul>
+</div>
